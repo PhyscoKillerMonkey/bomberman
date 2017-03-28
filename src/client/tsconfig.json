@@ -3,6 +3,7 @@
     "module": "amd",
     "outFile": "../../dist/game.js",
     "sourceMap": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "target": "es5"
   }
 }
