@@ -1,4 +1,4 @@
-Title Modemon Server
+Title Nodemon Server
 
 start "Webpack Watch Client" /min webpack -w
 start "TSC Watch Server" /min tsc -w -p src/server
