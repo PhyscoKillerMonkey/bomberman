@@ -3,6 +3,7 @@
     "module": "commonjs",
     "outDir": "../../bin",
     "sourceMap": true,
-    "noImplicitAny": true
+    "noImplicitAny": true,
+    "rootDir": ".."
   }
 }

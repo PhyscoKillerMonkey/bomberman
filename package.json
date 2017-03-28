@@ -20,6 +20,7 @@
     "@types/socket.io-client": "^1.4.29",
     "awesome-typescript-loader": "^3.1.2",
     "source-map-loader": "^0.2.0",
+    "typescript": "^2.3.0-dev.20170328",
     "webpack": "^2.3.2"
   }
 }
