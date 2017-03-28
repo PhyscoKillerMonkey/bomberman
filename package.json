@@ -1,0 +1,23 @@
+{
+  "name": "bomberman",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node ./bin/server/app.js",
+    "webpack": "webpack -w",
+    "server": "set NODE_ENV=development && nodemon ./bin/server/app.js",
+    "browser-sync": "browser-sync start --config bs-config.js"
+  },
+  "dependencies": {
+    "express": "^4.15.2",
+    "socket.io": "^1.7.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.0.35",
+    "@types/node": "^7.0.12",
+    "@types/socket.io": "^1.4.29",
+    "@types/socket.io-client": "^1.4.29",
+    "awesome-typescript-loader": "^3.1.2",
+    "source-map-loader": "^0.2.0",
+    "webpack": "^2.3.2"
+  }
+}

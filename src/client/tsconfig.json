@@ -1,0 +1,8 @@
+{
+  "compilerOptions": {
+    "module": "amd",
+    "outFile": "../../dist/game.js",
+    "sourceMap": true,
+    "noImplicitAny": true
+  }
+}
