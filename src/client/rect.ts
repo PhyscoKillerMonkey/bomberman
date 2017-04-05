@@ -1,5 +1,5 @@
 import { Drawable } from "./drawable";
-import { Vec2 } from '../shared/vec2';
+import { Vec2 } from "../shared/vec2";
 
 export class Rect implements Drawable {
 
@@ -8,19 +8,19 @@ export class Rect implements Drawable {
   private height: number;
   private colour: string;
 
-  constructor(pos: Vec2, width: number, height: number) {
+  constructor(pos: Vec2, width: number, height: number, colour = "rgb(200, 0, 0)") {
     this.pos = pos;
     this.width = width;
     this.height = height;
+    this.colour = colour;
   }
 
-  public setPos(x: number, y: number) {
-    this.pos.x = x;
-    this.pos.y = y;
+  public setPos(vec: Vec2) {
+    this.pos = vec;
   }
 
   public draw(ctx: CanvasRenderingContext2D) {
-    ctx.fillStyle = "rgb(200, 0, 0)";
+    ctx.fillStyle = this.colour;
     ctx.fillRect(this.pos.x, this.pos.y, this.width, this.height);
   }
 

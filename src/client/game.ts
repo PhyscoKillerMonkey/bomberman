@@ -1,6 +1,8 @@
 import { Vec2 } from "../shared/vec2";
 import { Drawable } from "./drawable";
 import { Rect } from "./rect";
+import { Input } from "./input";
+import { Player } from "./player";
 
 export class Game {
 
@@ -25,6 +27,8 @@ export class Game {
   private lastRefresh = 0;
 
   private entities: Drawable[];
+
+  private player: Player;
 
   constructor(width: number, height: number) {
     this.width = width;
@@ -86,29 +90,6 @@ export class Game {
     }
   }
 
-
-
-  private init() {
-    this.entities.push(new Rect(new Vec2(10, 10), 20, 20));
-  }
-
-  private update(currentTime: number) {
-    this.updateCounters(true, currentTime);
-  }
-
-  private render(currentTime: number) {
-    this.updateCounters(false, currentTime);
-
-    this.ctx.fillStyle = "rgb(200, 240, 255)"
-    this.ctx.fillRect(0, 0, this.width, this.height);
-
-    for (let e of this.entities) {
-      e.draw(this.ctx);
-    }
-  }
-
-
-
   private updateCounters(wasUpdate: boolean, currentTime: number) {
     if (wasUpdate) {
       this.updateCount++;
@@ -127,6 +108,33 @@ export class Game {
     }
 
     document.getElementById("test").innerHTML = "Updates: " + this.totalUpdates + " Renders: " + this.totalRenders + "<br>UPS: " + this.ups + " FPS: " + this.fps;
+  }
+
+
+
+  private init() {
+    Input.init();
+
+    let rect = new Rect(new Vec2(), 20, 20);
+    this.entities.push(rect);
+    this.player = new Player(new Vec2(), rect);
+  }
+
+  private update(currentTime: number) {
+    this.updateCounters(true, currentTime);
+    Input.update();
+    this.player.update();
+  }
+
+  private render(currentTime: number) {
+    this.updateCounters(false, currentTime);
+
+    this.ctx.fillStyle = "rgb(200, 240, 255)"
+    this.ctx.fillRect(0, 0, this.width, this.height);
+
+    for (let e of this.entities) {
+      e.draw(this.ctx);
+    }
   }
 
 }
