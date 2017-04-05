@@ -31,7 +31,11 @@ export class Player {
     if (Input.keyDown("a")) dV.x--;
     if (Input.keyDown("d")) dV.x++;
 
-    this.move(dV.normalise());
+    // Speed in px per second
+    let speed = 96;
+    let ups = 60;
+
+    this.move(dV.normalise().multS(speed / ups));
   }
 
   public draw(ctx: CanvasRenderingContext2D) {
