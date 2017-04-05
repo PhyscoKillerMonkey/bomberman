@@ -3,9 +3,9 @@ export class Vec2 {
   public x: number;
   public y: number;
 
-  constructor(x?: number, y?: number) {
-    this.x = x || 0;
-    this.y = y || 0;
+  constructor(x = 0, y = 0) {
+    this.x = x;
+    this.y = y;
   }
 
   public set(vec: Vec2) {
