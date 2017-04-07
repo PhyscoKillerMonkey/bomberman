@@ -3,6 +3,7 @@ import { Drawable } from "./drawable";
 import { Rect } from "./rect";
 import { Input } from "./input";
 import { Player } from "./player";
+import { Entity } from "./entity";
 
 export class Game {
 
@@ -26,7 +27,7 @@ export class Game {
   private fps = 0;
   private lastRefresh = 0;
 
-  private entities: Drawable[];
+  private entities: Entity[];
 
   private player: Player;
 
@@ -115,9 +116,17 @@ export class Game {
   private init() {
     Input.init();
 
-    let rect = new Rect(new Vec2(), 20, 20);
-    this.entities.push(rect);
-    this.player = new Player(new Vec2(), rect);
+    let playerRect = new Rect(new Vec2(), 20, 20);
+    this.player = new Player(new Vec2(), playerRect);
+    this.entities.push(this.player);
+
+    let crateRect = new Rect(new Vec2(), 30, 30, "rgb(195,142,99)");
+    for (let i = 0; i < 10; i++) {
+      let x = Math.floor(Math.random() * this.width);
+      let y = Math.floor(Math.random() * this.height);
+      let crate = new Entity(new Vec2(x, y), crateRect);
+      this.entities.push(crate);
+    }
   }
 
   private update(currentTime: number) {
