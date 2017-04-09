@@ -67,7 +67,7 @@ export class Game {
     this.accumulator += frameTime;
 
     while (this.accumulator >= this.dt) {
-      this.update(currentTime);
+      this.update(this.dt, currentTime);
       this.accumulator -= this.dt;
       currentTime += this.dt;
     }
@@ -113,6 +113,14 @@ export class Game {
 
 
 
+  public addEntity(entity: Entity) {
+    this.entities.push(entity);
+  }
+
+  public removeEntity(entity: Entity) {
+    this.entities.splice(this.entities.indexOf(entity), 1);
+  }
+
   private init() {
     Input.init();
 
@@ -129,10 +137,17 @@ export class Game {
     }
   }
 
-  private update(currentTime: number) {
+  private update(dt: number, currentTime: number) {
     this.updateCounters(true, currentTime);
     Input.update();
-    this.player.update();
+    
+    for (let e of this.entities) {
+      if (e.isDead()) {
+        this.removeEntity(e);
+      } else {
+        e.update(dt, currentTime);
+      }
+    }
   }
 
   private render(currentTime: number) {
