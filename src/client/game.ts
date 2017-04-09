@@ -27,7 +27,7 @@ export class Game {
   private fps = 0;
   private lastRefresh = 0;
 
-  private entities: Entity[];
+  public entities: Entity[];
 
   private player: Player;
 
