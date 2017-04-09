@@ -1,12 +1,15 @@
+import { Game } from "./game";
 import { Drawable } from "./drawable";
 import { Vec2 } from "../shared/vec2";
 
 export class Entity {
 
+  protected game: Game;
   private pos: Vec2;
   private image: Drawable;
 
-  constructor(pos: Vec2, image: Drawable) {
+  constructor(game: Game, pos: Vec2, image: Drawable) {
+    this.game = game;
     this.pos = pos;
     this.image = image;
   }

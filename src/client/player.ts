@@ -1,3 +1,4 @@
+import { Game } from "./game";
 import { Drawable } from "./drawable";
 import { Vec2 } from "../shared/vec2";
 import { Input } from "./input";
@@ -5,8 +6,8 @@ import { Entity } from "./entity";
 
 export class Player extends Entity {
 
-  constructor(pos: Vec2, image: Drawable) {
-    super(pos, image);
+  constructor(game: Game, pos: Vec2, image: Drawable) {
+    super(game, pos, image);
   }
 
   public update() {
