@@ -4,6 +4,9 @@ export class Input {
   static keysDown: string[];
   static lastKeysDown: string[];
 
+  // Enable console logs and stuff
+  static debug = false;
+
   static init() {
     this.keys = [];
     this.keysDown = [];
@@ -41,6 +44,7 @@ export class Input {
   static update() {
     this.lastKeysDown = this.keysDown.slice();
     this.keysDown = this.keys.slice();
+    if (this.debug) console.log(this.keysDown);
   }
 
 }

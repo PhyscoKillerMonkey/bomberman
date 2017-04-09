@@ -19,10 +19,10 @@ export class Player extends Entity {
     // Do input
     let dV = new Vec2();
 
-    if (Input.keyDown("w")) dV.y--;
-    if (Input.keyDown("s")) dV.y++;
-    if (Input.keyDown("a")) dV.x--;
-    if (Input.keyDown("d")) dV.x++;
+    if (Input.keyDown("ArrowUp")) dV.y--;
+    if (Input.keyDown("ArrowDown")) dV.y++;
+    if (Input.keyDown("ArrowLeft")) dV.x--;
+    if (Input.keyDown("ArrowRight")) dV.x++;
 
     // Speed in px per second
     let speed = 96;
