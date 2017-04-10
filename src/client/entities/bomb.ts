@@ -1,9 +1,9 @@
-import { Game } from "./game";
-import { Drawable } from "./drawable";
-import { Vec2 } from "../shared/vec2";
-import { Entity } from "./entity";
-import { Circle } from "./circle";
-import { Explosion } from "./explosion";
+import { Vec2 } from "shared/vec2";
+import { Game } from "game";
+import { Entity } from "entities/entity";
+import { Explosion } from "entities/explosion";
+import { Drawable } from "shapes/drawable";
+import { Circle } from "shapes/circle";
 
 export class Bomb extends Entity {
 

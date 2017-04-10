@@ -1,9 +1,11 @@
-import { Vec2 } from "../shared/vec2";
-import { Drawable } from "./drawable";
-import { Rect } from "./rect";
-import { Input } from "./input";
-import { Player } from "./player";
-import { Entity } from "./entity";
+import { Vec2 } from "shared/vec2";
+import { Input } from "input";
+import { Entity } from "entities/entity";
+import { Explosion } from "entities/explosion";
+import { Player } from "entities/player";
+import { Drawable } from "shapes/drawable";
+import { Circle } from "shapes/circle";
+import { Rect } from "shapes/rect";
 
 export class Game {
 

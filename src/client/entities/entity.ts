@@ -1,6 +1,6 @@
-import { Game } from "./game";
-import { Drawable } from "./drawable";
-import { Vec2 } from "../shared/vec2";
+import { Vec2 } from "shared/vec2";
+import { Game } from "game";
+import { Drawable } from "shapes/drawable";
 
 export class Entity {
 

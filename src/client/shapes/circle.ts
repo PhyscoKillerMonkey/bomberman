@@ -1,5 +1,5 @@
-import { Drawable } from "./drawable";
-import { Vec2 } from "../shared/vec2";
+import { Vec2 } from "shared/vec2";
+import { Drawable } from "shapes/drawable";
 
 export class Circle implements Drawable {
 

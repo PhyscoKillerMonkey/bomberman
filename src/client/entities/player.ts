@@ -1,10 +1,11 @@
-import { Game } from "./game";
-import { Drawable } from "./drawable";
-import { Vec2 } from "../shared/vec2";
-import { Input } from "./input";
-import { Entity } from "./entity";
-import { Bomb } from "./bomb";
-import { Circle } from "./circle";
+import { Vec2 } from "shared/vec2";
+import { Game } from "game";
+import { Input } from "input";
+import { Entity } from "entities/entity";
+import { Explosion } from "entities/explosion";
+import { Bomb } from "entities/bomb";
+import { Drawable } from "shapes/drawable";
+import { Circle } from "shapes/circle";
 
 export class Player extends Entity {
 
