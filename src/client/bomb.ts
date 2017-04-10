@@ -36,7 +36,6 @@ export class Bomb extends Entity {
       // Create the explosion
       let explosionCircle = new Circle(new Vec2(), this.explodeRadius, "rgb(255,165,0)");
       let p = this.getPos().clone();
-      p.sub(new Vec2(this.explodeRadius / 2, this.explodeRadius / 2));
       let explosion = new Explosion(this.game, p, explosionCircle);
       this.game.addEntity(explosion);
     }

@@ -16,9 +16,8 @@ export class Circle implements Drawable {
   public draw(ctx: CanvasRenderingContext2D, offset: Vec2) {
     ctx.fillStyle = this.colour;
     ctx.beginPath();
-    // Remove these lines to center the circle on x, y
-    let x = this.pos.x + offset.x + this.radius;
-    let y = this.pos.y + offset.y + this.radius;
+    let x = this.pos.x + offset.x;
+    let y = this.pos.y + offset.y;
     ctx.arc(x, y, this.radius, 0, 360, false);
     ctx.fill();
     ctx.closePath();

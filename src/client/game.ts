@@ -125,7 +125,7 @@ export class Game {
     Input.init();
 
     let playerRect = new Rect(new Vec2(), 20, 20);
-    this.player = new Player(this, new Vec2(), playerRect);
+    this.player = new Player(this, new Vec2(this.width / 2, this.height / 2), playerRect);
     this.addEntity(this.player);
 
     let crateRect = new Rect(new Vec2(), 30, 30, "rgb(195,142,99)");

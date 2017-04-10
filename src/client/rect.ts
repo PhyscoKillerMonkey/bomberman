@@ -17,7 +17,9 @@ export class Rect implements Drawable {
 
   public draw(ctx: CanvasRenderingContext2D, offset: Vec2) {
     ctx.fillStyle = this.colour;
-    ctx.fillRect(this.pos.x + offset.x, this.pos.y + offset.y, this.width, this.height);
+    let x = this.pos.x + offset.x - this.width / 2;
+    let y = this.pos.y + offset.y - this.height / 2;
+    ctx.fillRect(x, y, this.width, this.height);
   }
 
   public setPos(vec: Vec2) {
