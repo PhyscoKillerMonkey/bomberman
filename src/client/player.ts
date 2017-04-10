@@ -4,7 +4,7 @@ import { Vec2 } from "../shared/vec2";
 import { Input } from "./input";
 import { Entity } from "./entity";
 import { Bomb } from "./bomb";
-import { Rect } from "./rect";
+import { Circle } from "./circle";
 
 export class Player extends Entity {
 
@@ -32,8 +32,8 @@ export class Player extends Entity {
 
     if (Input.keyPressed(" ") && this.bombsLeft > 0) {
       this.bombsLeft--;
-      let bombRect = new Rect(new Vec2(), 10, 10, "rgb(10,10,10)");
-      let bomb = new Bomb(this.game, this.getPos().clone(), bombRect, () => { this.bombsLeft++; });
+      let bombCircle = new Circle(new Vec2(), 5, "rgb(10,10,10)");
+      let bomb = new Bomb(this.game, this.getPos().clone(), bombCircle, () => { this.bombsLeft++; });
       this.game.addEntity(bomb);
     }
   }

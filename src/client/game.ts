@@ -126,14 +126,14 @@ export class Game {
 
     let playerRect = new Rect(new Vec2(), 20, 20);
     this.player = new Player(this, new Vec2(), playerRect);
-    this.entities.push(this.player);
+    this.addEntity(this.player);
 
     let crateRect = new Rect(new Vec2(), 30, 30, "rgb(195,142,99)");
     for (let i = 0; i < 10; i++) {
       let x = Math.floor(Math.random() * this.width);
       let y = Math.floor(Math.random() * this.height);
       let crate = new Entity(this, new Vec2(x, y), crateRect);
-      this.entities.push(crate);
+      this.addEntity(crate);
     }
   }
 
