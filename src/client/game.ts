@@ -1,5 +1,6 @@
 import { Vec2 } from "shared/vec2";
 import { Input } from "input";
+import { Physics } from "physics";
 import { Entity } from "entities/entity";
 import { Explosion } from "entities/explosion";
 import { Player } from "entities/player";
@@ -131,10 +132,11 @@ export class Game {
     this.addEntity(this.player);
 
     let crateRect = new Rect(new Vec2(), 30, 30, "rgb(195,142,99)");
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < 2; i++) {
       let x = Math.floor(Math.random() * this.width);
       let y = Math.floor(Math.random() * this.height);
       let crate = new Entity(this, new Vec2(x, y), crateRect);
+      crate.allowCollisions(true);
       this.addEntity(crate);
     }
   }
@@ -146,8 +148,18 @@ export class Game {
     for (let e of this.entities) {
       if (e.isDead()) {
         this.removeEntity(e);
+
       } else {
         e.update(dt, currentTime);
+
+        // Collision stuff
+        if (e.collides() && !e.isDead()) {
+          for (let e2 of this.entities) {
+            if (e.collides() && Physics.colliding(e, e2)) {
+              console.log("Collision");
+            }
+          }
+        }
       }
     }
   }

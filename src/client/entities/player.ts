@@ -14,6 +14,8 @@ export class Player extends Entity {
   constructor(game: Game, pos: Vec2, image: Drawable) {
     super(game, pos, image);
     this.bombsLeft = 2;
+    this.collide = true;
+    this.static = false;
   }
 
   public update(dt: number, currentTime: number) {

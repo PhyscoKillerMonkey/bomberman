@@ -23,6 +23,14 @@ export class Circle implements Drawable {
     ctx.closePath();
   }
 
+  public getHeight() {
+    return this.radius * 2;
+  }
+
+  public getWidth() {
+    return this.radius * 2;
+  }
+
   public setPos(vec: Vec2) {
     this.pos = vec;
   }

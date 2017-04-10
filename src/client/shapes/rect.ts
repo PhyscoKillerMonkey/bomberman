@@ -22,6 +22,14 @@ export class Rect implements Drawable {
     ctx.fillRect(x, y, this.width, this.height);
   }
 
+  public getHeight() {
+    return this.height;
+  }
+
+  public getWidth() {
+    return this.width;
+  }
+
   public setPos(vec: Vec2) {
     this.pos = vec;
   }
