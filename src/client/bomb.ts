@@ -2,6 +2,8 @@ import { Game } from "./game";
 import { Drawable } from "./drawable";
 import { Vec2 } from "../shared/vec2";
 import { Entity } from "./entity";
+import { Circle } from "./circle";
+import { Explosion } from "./explosion";
 
 export class Bomb extends Entity {
 
@@ -30,6 +32,13 @@ export class Bomb extends Entity {
           e.setDead(true);
         }
       }
+
+      // Create the explosion
+      let explosionCircle = new Circle(new Vec2(), this.explodeRadius, "rgb(255,165,0)");
+      let p = this.getPos().clone();
+      p.sub(new Vec2(this.explodeRadius / 2, this.explodeRadius / 2));
+      let explosion = new Explosion(this.game, p, explosionCircle);
+      this.game.addEntity(explosion);
     }
   }
 
